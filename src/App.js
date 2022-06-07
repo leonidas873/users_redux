@@ -1,58 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import 'antd/dist/antd.css';
+import React, { useState } from 'react';
 import './App.css';
+import {
+  Routes,
+  Route,
+  useNavigate
+} from "react-router-dom";
+import { AddUser, HomePage, Users } from './pages';
+import { Button, PageHeader, Space } from 'antd';
+
+
+
 
 function App() {
+
+const navigate = useNavigate();
+const [activePage, setActivePage] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <PageHeader>
+        <Space size={"large"}>
+        <Button type={activePage=="addUser" ? "primary" : "secondary"} 
+        onClick={()=>{
+          navigate("/addUser");
+          setActivePage("addUser")
+        }}>add user</Button>
+        <Button type={activePage=="users" ? "primary" : "secondary"} 
+        onClick={()=>{
+          navigate("/users");
+          setActivePage("users")
+        }}
+        >users</Button>
+        </Space>
+      </PageHeader>
+
+      <Routes>
+      <Route path="addUser" element = {<AddUser/>} />
+      <Route path="users" element = {<Users/>} />
+      <Route path="/" element = {<HomePage/>} />
+      </Routes>
+
     </div>
   );
 }
 
 export default App;
+
