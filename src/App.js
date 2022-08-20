@@ -24,7 +24,7 @@ const [activePage, setActivePage] = useState('')
         onClick={()=>{
           navigate("/addUser");
           setActivePage("addUser")
-        }}>add user</Button>
+        }}>add usere</Button>
         <Button type={activePage=="users" ? "primary" : "secondary"} 
         onClick={()=>{
           navigate("/users");
@@ -35,8 +35,8 @@ const [activePage, setActivePage] = useState('')
       </PageHeader>
 
       <Routes>
-      <Route path="addUser" element = {<AddUser/>} />
-      <Route path="users" element = {<Users/>} />
+      <Route path="/addUser" element = {<AddUser/>} />
+      <Route path="/users" element = {<Users/>} />
       <Route path="/" element = {<HomePage/>} />
       </Routes>
 

@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import {
-  BrowserRouter
+  HashRouter
 } from "react-router-dom";
 
 
@@ -17,9 +17,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
       <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
