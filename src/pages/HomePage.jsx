@@ -3,12 +3,11 @@ import styled from "styled-components";
 const HomePage = () => {
     return <Container>
         <h1>home page</h1>
-    <h4>ძირითადი ფუნქციონალები: </h4>
+    <h4>functionalities: </h4>
     <ul>
-        <li>add user ფეიჯიდან შესაძლებელია რეგისტრაცია</li>
-        <li>რეგისტრაცისას მომხმარებელი ემატება რედაქსის სტეიტში</li>
-        <li>users ფეიჯზე განთავსებულ ცხრილში ემატება add user ში დარეგისტრირებული მომხმარებლები</li>
-        <li>შესაძლებელია ცხრილში მოცემული ინფორმაციის ედითი და წაშლა</li>
+        <li>you can register from add user page</li>
+        <li>after registration user is added to redux state and is rendered on users page</li>
+        <li>you can edit information on user's table</li>
         
     </ul>
     </Container>
