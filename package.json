@@ -2,7 +2,7 @@
   "name": "redux",
   "version": "0.1.0",
   "private": true,
-  "homepage":"http://leonidas873.github.io",
+  "homepage":"http://leonidas873.github.io/users_redux",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
